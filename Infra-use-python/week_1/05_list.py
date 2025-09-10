@@ -49,7 +49,7 @@ for i in range(LOOP):
     score = int(input())
     student.append(score)
 
-print(high_score(student))
-print(min_score(student))
-print(total_sum(student))
-print(over_90(student))
+print("가장 높은 점수 : ", high_score(student))
+print("가장 낮은 점수 : ",min_score(student))
+print("총 점수 : ",total_sum(student))
+print("90점을 넘긴 학생 수 : ",over_90(student))
