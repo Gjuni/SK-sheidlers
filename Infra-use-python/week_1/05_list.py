@@ -38,12 +38,12 @@ def total_sum(student):
     return result/LOOP
 
 def over_90(studnet):
-    list_over_90 = []
+    count = 0
 
     for i in student :
         if(i >= 90) :
-            list_over_90.append(i)
-    return list_over_90
+            count += 1
+    return count
 
 for i in range(LOOP):
     score = int(input())
