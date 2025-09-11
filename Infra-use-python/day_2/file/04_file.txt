@@ -1,0 +1,2 @@
+hello world
+this class is good to me
