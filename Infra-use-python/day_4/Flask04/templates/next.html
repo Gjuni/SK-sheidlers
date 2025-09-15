@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Content</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        .container {
+            display: flex; /* Flexbox 레이아웃 활성화 */
+            justify-content: space-between; /* 양쪽 끝으로 정렬 */
+            gap: 20px; /* 열 사이의 간격 */
+        }
+        .column {
+            flex: 1; /* 각 열이 동일한 너비를 차지하도록 설정 */
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        pre {
+            white-space: pre-wrap; /* 긴 텍스트 자동 줄바꿈 */
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>업로드된 파일 내용</h1>
+    <div class="container">
+        <div class="column"><h2>본문</h2><pre>{{ file_content }}</pre></div>
+        <div class="column"><h2>영문 번역</h2><pre>{{ file_content2 }}</pre></div>
+    </div>
+    <br>
+    <a href="{{ url_for('index') }}">다른 파일 업로드하기</a>
+</body>
+</html>
