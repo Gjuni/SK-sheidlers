@@ -1,0 +1,32 @@
+<!-- 로그인 페이지 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Form</title>
+  </head>
+    <body>
+    <div class="login-wrapper">
+      <h2>Login</h2>
+      <form method="post" action="/login" id="login-form" onsubmit="return validateForm()">
+        <input type="text" name="ip" placeholder="IP" id="ip">
+        <input type="text" name="userId" placeholder="userId" id="userId">
+        <input type="password" name="password" placeholder="Password" id="password">
+        <input type="submit" value="Login">
+      </form>
+    </div>
+    
+    <script>
+      function validateForm() {
+        let ip = document.getElementById("ipAddress").value;
+        let userId = document.getElementById("userId").value;
+        let password = document.getElementById("userPassword").value;
+
+        if (ip == "" || userId == "" || password == "") {
+          alert("모든 필드를 채워주세요.");
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>

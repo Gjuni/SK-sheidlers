@@ -1,0 +1,25 @@
+-- 탐지 문구
+test case test
+
+#### dafklajsdf -- 
+
+안녕하세요 
+
+안녕하시와요
+
+## //         --
+// ##         --
+/ ##
+///////////   -- 
+######        --
+email.emaile
+email@gmail.com --
+email@@gmail.com
+email@gmail..com
+# email@gmail.com --
+// email@gmail.com --
+
+----------------
+@gmail.com
+gmail.com
+.com
