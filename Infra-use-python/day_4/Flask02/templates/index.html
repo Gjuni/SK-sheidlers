@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>번역 서비스 파일을 첨부하세요.</h1>
+    <form method="post" action="{{url_for('upload')}}" enctype="multipart/form-data">
+        <input type="file" name="file"><br>
+        <input type="submit" value="업로드"> 
+    </form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h4 {
+            margin-bottom: 5px; /* h4 태그 아래 여백 줄이기 */
+            margin-top: 15px;  /* h4 태그 위 여백 조절 */
+            font-size: 1em;    /* 글자 크기를 일반 텍스트와 비슷하게 설정 */
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="{{url_for('upload')}}">
+        <b>증서 내용 수정 웹 사이트</b>
+        <h4>name</h4>
+        <input type="text" name="NAME" size="50" value="jun"> <br>
+        <h4>course</h4>
+        <input type="text" name="COURSE" size="50" value="python auto class"> <br>
+        <h4>date</h4>
+        <input type="text" name="DATE" size="50" value="2025-09-09"> <br>
+        <button type="submit">제출</button>
+    </form>
+</body>
+</html>

@@ -10,7 +10,7 @@ SLACK_API_TOKEN = os.getenv("SLACK_API_TOKEN")
 SLACK_CHANNEL = os.getenv("SLACK_CHANNEL")
 
 def send_message(channel, text):
-    # WebClient 인스턴스 생성
+    # WebClient 인스턴스 생성w
     client = WebClient(token=SLACK_API_TOKEN)
     
     try:
