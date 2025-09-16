@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+</head>
+<body>
+    <h1>사용자 페이지입니다.</h1>
+     <!-- onsubmit 이벤트에 validateForm 함수를 연결을 통해 값 누락 방지 -->
+    <form method="post" action="{{ url_for('user.login') }}" onsubmit="return validateForm()">
+        <input type="text" id="email" name="email" placeholder="Email"><br>
+        <button type="button" id="send-mail" onclick="sendOneTimeMail()">메일 전송</button>
+
+        <!-- 3. 비밀번호 입력과 최종 로그인 버튼 (처음에는 숨김) -->
+        <div id="password-section" style="display: none;">
+            <input type="password" id="password" name="password" placeholder="Password"><br>
+            <button type="submit">login</button>
+        </div>
+    </form>
+
+    <script>
+        async function sendOneTimeMail() {
+            const email = document.getElementById('email').value;
+            const sendButton = document.getElementById('send-mail');
+
+            if (email.trim() === '') {
+                alert('input Email');
+                return;
+            }
+
+            // 버튼을 비활성화하여 중복 클릭 방지
+            sendButton.disabled = true;
+            sendButton.textContent = 'sending...';
+
+            try {
+                const response = await fetch("{{ url_for('user.code') }}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: email }), // Json값 문자열로 변환
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    alert('check your mail mail sent');
+                    document.getElementById('password-section').style.display = 'block'; // block 요소로 보여지게 만들어라.
+                } else {
+                    alert('메일 전송에 실패했습니다. 다시 시도해주세요.');
+                    sendButton.disabled = false; 
+                    sendButton.textContent = 'Send Mail';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+                sendButton.disabled = false; 
+                sendButton.textContent = 'Send Mail';
+            }
+        }
+
+        function validateForm() {
+            const password = document.getElementById('password').value;
+
+            if (password.trim() === '') {
+                alert('input password');
+                return false; 
+            }
+            return true; 
+        }
+    </script>
+</body>
+</html>
